@@ -15,6 +15,12 @@ export const getCurrentUser = async () => {
     }
 }
 
+const getWorkerUrl = (path: string) => {
+    const baseUrl = PUTER_WORKER_URL.endsWith('/') ? PUTER_WORKER_URL.slice(0, -1) : PUTER_WORKER_URL;
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${baseUrl}${normalizedPath}`;
+}
+
 export const createProject = async ({ item, visibility = "private" }: CreateProjectParams): Promise<DesignItem | null | undefined> => {
     if(!PUTER_WORKER_URL) {
         console.warn('Missing VITE_PUTER_WORKER_URL; skip history fetch;');
@@ -60,7 +66,7 @@ export const createProject = async ({ item, visibility = "private" }: CreateProj
     }
 
     try {
-        const response = await puter.workers.exec(`${PUTER_WORKER_URL}/api/projects/save`, {
+        const response = await puter.workers.exec(getWorkerUrl('/api/projects/save'), {
             method: 'POST',
             body: JSON.stringify({
                 project: payload,
@@ -89,7 +95,7 @@ export const getProjects = async () => {
     }
 
     try {
-        const response = await puter.workers.exec(`${PUTER_WORKER_URL}/api/projects/list`, { method: 'GET' });
+        const response = await puter.workers.exec(getWorkerUrl('/api/projects/list'), { method: 'GET' });
 
         if(!response.ok) {
             console.error('Failed to fetch history', await response.text());
@@ -115,7 +121,7 @@ export const getProjectById = async ({ id }: { id: string }) => {
 
     try {
         const response = await puter.workers.exec(
-            `${PUTER_WORKER_URL}/api/projects/get?id=${encodeURIComponent(id)}`,
+            getWorkerUrl(`/api/projects/get?id=${encodeURIComponent(id)}`),
             { method: "GET" },
         );
 
