@@ -10,6 +10,16 @@ Roomify is an AI-first design environment that helps you visualize, render, and 
 - **Side-by-Side Comparison**: Interactive tools to visualize the direct transformation from a source sketch to its AI-rendered counterpart.
 - **Privacy Controls**: Granular public and private toggles for your architectural data.
 
+## 🖼 Demo
+
+Below is a visual demo of Roomify in action, showing floor plan transformation and comparison visuals.
+
+![Roomify Demo](public/readme/readme-hero.webp)
+
+| Before | After |
+| --- | --- |
+| ![Before](public/readme/readme-jsmpro.webp) | ![After](public/readme/readme-videokit.webp) |
+
 ## ⚙️ Tech Stack
 
 - **React / React Router**: For building a modern, responsive user interface.
