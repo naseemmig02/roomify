@@ -12,13 +12,15 @@ Roomify is an AI-first design environment that helps you visualize, render, and 
 
 ## 🖼 Demo
 
-Below is a visual demo of Roomify in action, showing floor plan transformation and comparison visuals.
+Experience Roomify with real interface examples from the app.
 
-![Roomify Demo](public/readme/readme-hero.webp)
+![Roomify Landing Demo](public/readme/demo-homepage.png)
 
-| Before | After |
+### Before and After
+
+| Before & After Comparison | Roomify Landing Page |
 | --- | --- |
-| ![Before](public/readme/readme-jsmpro.webp) | ![After](public/readme/readme-videokit.webp) |
+| ![Before and After](public/readme/demo-comparison.png) | ![Roomify Demo](public/readme/demo-before-after.png) |
 
 ## ⚙️ Tech Stack
 
